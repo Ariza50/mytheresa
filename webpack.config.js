@@ -2,7 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
-const rulesForStyles = {
+const rulesForScssStyles = {
+  test: /\.scss$/,
+  use: ['style-loader', 'css-loader', 'sass-loader']
+}
+
+const rulesForCssStyles = {
   test: /\.css$/,
   use: ['style-loader', 'css-loader']
 }
@@ -20,7 +25,7 @@ const ruleForReact = {
   }
 };
 
-const rules = [ruleForReact, rulesForStyles];
+const rules = [ruleForReact, rulesForCssStyles, rulesForScssStyles];
 
 module.exports = (env, argv) => {
   const {mode} = argv;
