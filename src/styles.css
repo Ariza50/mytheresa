@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
