@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 const rulesForStyles = {
   test: /\.css$/,
@@ -19,19 +20,25 @@ const ruleForReact = {
   }
 };
 
-const rules = [ ruleForReact, rulesForStyles ];
+const rules = [ruleForReact, rulesForStyles];
 
-module.exports = {
-  output: {
-    path: path.resolve(__dirname, 'build'),
-  },
-  plugins: [
-    new HtmlWebpackPlugin({template: "src/index.html"})
-  ],
-  module: { rules },
-  devServer: {
-    open: true,
-    port: 3000,
-  },
-  devtool: 'source-map'
+module.exports = (env, argv) => {
+  const {mode} = argv;
+  const isProd = mode === 'production';
+  return {
+    output: {
+      filename: isProd ? "mytheresa.[name].[contenthash].js" : "main.js",
+      path: path.resolve(__dirname, 'build'),
+    },
+    plugins: [
+      new HtmlWebpackPlugin({template: "src/index.html"}),
+      new CleanWebpackPlugin()
+    ],
+    module: {rules},
+    devServer: {
+      open: true,
+      port: 3000,
+    },
+    devtool: 'source-map'
+  }
 }
