@@ -28,5 +28,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({template: "src/index.html"})
   ],
-  module: { rules }
+  module: { rules },
+  devServer: {
+    open: true,
+    port: 3000,
+  },
+  devtool: 'source-map'
 }
