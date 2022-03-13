@@ -4,7 +4,7 @@ export const apiTheMoviedb = createApi({
   reducerPath: "moviedbApi",
   baseQuery: fetchBaseQuery( {
     baseUrl: process.env.API_URL,
-    prepareHeaders: (headers, { getState }) => {
+    prepareHeaders: (headers) => {
       headers.set('Authorization', `Bearer ${process.env.BEARER_TOKEN}`)
       return headers
     }
