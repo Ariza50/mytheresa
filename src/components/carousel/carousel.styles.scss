@@ -1,44 +1,48 @@
-/*Image source: https://2.bp.blogspot.com/--88HjYhJpJw/UZ5akPNgjLI/AAAAAAAAC0Y/Jt0_doM1dKY/s1600/Life%2Bin%2BWorld%2BWar%2BII%2B(4).jpeg*/
-
-body {
-  //margin: 0px;
-  background-color: #dbdbdb;
-}
-
 .carousel {
   display: flex;
+  align-items: center;
   position: relative;
 
   button {
     border: none;
-    opacity: 0.5;
-    z-index: 1;
+    opacity: 0.6;
     height: 150px;
     width: 150px;
-    left: 20px;
     border-radius: 50%;
-    align-self: center;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .left {
+    top: 40%;
+    left: 10%;
+  }
+
+  .right {
+    top: 40%;
+    right: 10%;
   }
 
   #wrapper-start, #wrapper-end {
     margin-top: 20px;
     overflow: hidden;
-    width: 379px;
-    height: 568px;
+    width: 279px;
+    height: 468px;
     box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
     transform: rotate(-2deg);
     border: 10px solid #fff;
     opacity: 0.2;
-    z-index: 2;
+    z-index: 0;
+    cursor: pointer;
   }
 
   #wrapper-start {
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 25px;
   }
 
   #wrapper-end {
-    margin-left: 0;
+    margin-left: 25px;
     margin-right: auto;
   }
 
@@ -53,6 +57,15 @@ body {
     box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
     transform: rotate(-2deg);
     border: 10px solid #fff;
-    z-index: 0;
+    cursor: pointer;
+
+    .title {
+      position: absolute;
+      width: 379px;
+      height: 80px;
+      text-align: center;
+      background-color: #dbdbdb;
+      opacity: 0.4;
+    }
   }
 }
