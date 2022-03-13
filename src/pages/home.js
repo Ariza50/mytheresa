@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import CarouselComponent from '../components/carousel/carousel.component';
-import {useGetConfigurationQuery, useGetMovieByGenreQuery} from '../redux/apiTheMoviedb';
+import {useGetConfigurationQuery} from '../redux/apiTheMoviedb';
 
 const Home = () => {
   const { data } = useGetConfigurationQuery();
