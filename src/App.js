@@ -1,5 +1,10 @@
+import {BrowserRouter} from 'react-router-dom';
+import Router from './routes';
+
 const App = () => (
-  <div className="container">MyTheresa App</div>
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>
 )
 
 export default App;
