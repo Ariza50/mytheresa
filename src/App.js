@@ -1,9 +1,10 @@
-import Home from './pages/home';
+import {BrowserRouter} from 'react-router-dom';
+import Router from './routes';
 
 const App = () => (
-  <div>
-    <Home />
-  </div>
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>
 )
 
 export default App;
