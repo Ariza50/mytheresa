@@ -1,15 +1,9 @@
-import { Routes, Route, BrowserRouter }  from 'react-router-dom';
-import Detail from './pages/Detail';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import {BrowserRouter} from 'react-router-dom';
+import Router from './routes';
 
 const App = () => (
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={ <Home /> } />
-      <Route path="detail" element={ <Detail /> } />
-      <Route path="*" element={ <NotFound /> } />
-    </Routes>
+    <Router />
   </BrowserRouter>
 )
 
