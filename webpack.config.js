@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 const rulesForScssStyles = {
   test: /\.scss$/,
@@ -37,7 +38,8 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({template: "src/index.html"}),
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
+      new Dotenv(),
     ],
     module: {rules},
     devServer: {

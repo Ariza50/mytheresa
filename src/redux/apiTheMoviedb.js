@@ -2,13 +2,19 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/dist/query/react';
 
 export const apiTheMoviedb = createApi({
   reducerPath: "moviedbApi",
-  baseQuery: fetchBaseQuery( { baseUrl: 'https://api.themoviedb.org/3/' }),
+  baseQuery: fetchBaseQuery( {
+    baseUrl: process.env.API_URL,
+    prepareHeaders: (headers, { getState }) => {
+      headers.set('Authorization', `Bearer ${process.env.BEARER_TOKEN}`)
+      return headers
+    }
+  }),
   endpoints: (builder) => ({
     getConfiguration: builder.query({
       query: () =>
         'configuration',
     }),
-  })
+  }),
 });
 
-export const { useGetConfiguration } = apiTheMoviedb;
+export const { useGetConfigurationQuery } = apiTheMoviedb;
