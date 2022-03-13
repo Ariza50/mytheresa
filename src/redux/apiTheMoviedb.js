@@ -14,7 +14,11 @@ export const apiTheMoviedb = createApi({
       query: () =>
         'configuration',
     }),
+    getMovieByGenre: builder.query({
+      query: (genreId) =>
+        `discover/movie?language=${process.env.LANGUAGE}&page=1&with_genres=${genreId}`
+    })
   }),
 });
 
-export const { useGetConfigurationQuery } = apiTheMoviedb;
+export const { useGetConfigurationQuery, useGetMovieByGenreQuery } = apiTheMoviedb;

@@ -1,19 +1,28 @@
 import './carousel.styles.scss'
+import {useState} from 'react';
+import {useGetMovieByGenreQuery} from '../../redux/apiTheMoviedb';
 
-const carouselComponent = () => {
+const carouselComponent = ({ genreId }) => {
+  const [selectedMovie, setSelectedMovie] = useState(5);
+  const { data, isLoading } = useGetMovieByGenreQuery(28, 1);
+  console.log("-> data", data);
+  if (isLoading) {
+    return null
+  }
 
   return (
-    <div id="wrapper">
-
-      <div className="dust"><img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/dust.png" /></div>
-
-      <div className="foreground"><img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/foreground.png" />
+    <div className="carousel">
+      <div id="wrapper-start">
+        <img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/background.jpg" alt="" />
       </div>
+      <button>left</button>
 
-      <div className="midground"><img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/midground.png" />
+      <div id="wrapper-current">
+        <img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/background.jpg" alt="" />
       </div>
-
-      <div className="background"><img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/background.jpg" />
+      <button>right</button>
+      <div id="wrapper-end">
+        <img src="http://www.mattdrew.co.uk/experiments/images/ex-2point5d/background.jpg" alt="" />
       </div>
     </div>
   )
