@@ -1,5 +1,9 @@
+import Home from './pages/home';
+
 const App = () => (
-  <div className="container">MyTheresa App</div>
+  <div>
+    <Home />
+  </div>
 )
 
 export default App;
