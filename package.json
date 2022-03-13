@@ -23,6 +23,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2",
+    "sass-loader": "^12.6.0",
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
@@ -32,7 +33,6 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.2",
-    "redux-persist": "^6.0.0",
-    "sass-loader": "^12.6.0"
+    "redux-persist": "^6.0.0"
   }
 }

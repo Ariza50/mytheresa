@@ -1,0 +1,12 @@
+#outer {
+  height: 200px;
+  width: 200px;
+  border: 1px solid red;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+#inner {
+  border: 1px solid green;
+  height: 50px;
+}
