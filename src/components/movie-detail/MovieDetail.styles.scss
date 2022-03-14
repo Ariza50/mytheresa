@@ -1,13 +1,15 @@
 .movie-detail {
   display: flex;
   justify-content: center;
-  margin: 150px;
+  position: relative;
+  margin: 50px;
 
   .image-description-container {
     flex-direction: row;
     border: 10px solid #fff;
     box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
     transform: rotate(-2deg);
+    overflow: hidden;
   }
 
   .movie-description {

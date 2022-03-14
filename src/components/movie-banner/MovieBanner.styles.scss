@@ -1,0 +1,16 @@
+
+.banner {
+  //background-color: blue;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  .banner-content {
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+    width: 950px;
+    height: 200px;
+    text-align: center;
+  }
+
+}
