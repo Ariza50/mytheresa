@@ -16,18 +16,10 @@ const MovieDetailComponent = ({movieId}) => {
       <div className="image-description-container">
         <img src={movieImage} alt={movie.title} />
       </div>
-      <aside>
-        <div className="movie-description">
-          <div className="title-section">
-            <h1>{movie.title}</h1>
-          </div>
-          <div className="description-content">
-            <h3>{movie.overview}</h3>
-            <div style={{textAlign: 'right'}}>
-              <button>Add to wishlist</button>
-            </div>
-          </div>
-        </div>
+      <aside className="movie-description">
+        <h1>{movie.title}</h1>
+        <h3>{movie.overview}</h3>
+        <button>Add to wishlist</button>
       </aside>
     </div>
   );
