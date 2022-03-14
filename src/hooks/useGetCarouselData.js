@@ -3,7 +3,11 @@ import {useGetMovieByGenreQuery} from '../redux/apiTheMoviedb';
 export const useGetCarousel = ({ genre, movieId }) => {
   const { data } = useGetMovieByGenreQuery(genre, 1);
 
-  const movieIndex = data?.results.findIndex(movie => movie.id === movieId);
+  let movieIndex;
+  movieId === 0
+    ? movieIndex = 0
+    : movieIndex = data?.results.findIndex(movie => movie.id === movieId);
+
   const currentMovie = data?.results[movieIndex];
 
   const priorMovie = movieIndex === 0

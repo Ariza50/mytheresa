@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useGetCarousel from '../../hooks/useGetCarouselData';
 
 const carouselComponent = ({ genreId }) => {
-  const [selectedMovieId, setSelectedMovieId] = useState(928381);
+  const [selectedMovieId, setSelectedMovieId] = useState(0);
   const navigate = useNavigate();
   const { priorMovie, currentMovie, nextMovie, isLoading } = useGetCarousel({ genre: genreId, movieId: selectedMovieId});
 
