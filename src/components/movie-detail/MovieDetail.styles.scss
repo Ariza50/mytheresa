@@ -1,0 +1,57 @@
+.movie-detail {
+  display: flex;
+  justify-content: center;
+  margin: 150px;
+
+  .image-description-container {
+    flex-direction: row;
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+    transform: rotate(-2deg);
+  }
+
+  .movie-description {
+    margin: 0 30px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+    height: 750px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      background-color: grey;
+      padding: 20px 0;
+      box-shadow: 0 30px 30px 5px rgba(0,0,0,.3);
+    }
+
+    h3 {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    button {
+      margin: 15px 20px;
+      border: 10px solid #fff;
+      box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+      background-color: #fff;
+      cursor: pointer;
+      text-align: right;
+      width: 120px;
+    }
+
+    button:hover {
+      background-color: grey;
+      border: 10px solid grey;
+    }
+
+    button:active {
+      border: 10px solid #fff;
+      background-color: #fff;
+    }
+  }
+}
