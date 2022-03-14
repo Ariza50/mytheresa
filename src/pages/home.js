@@ -4,7 +4,6 @@ import {useGetConfigurationQuery} from '../redux/apiTheMoviedb';
 
 const Home = () => {
   const { data } = useGetConfigurationQuery();
-
   return (
     <div className="container">
     MyTheresa
@@ -12,7 +11,7 @@ const Home = () => {
       <h1>This is the home page</h1>
       <Link to="detail">Click to view our detail page</Link>
       <CarouselComponent genreId={28} />
-    </main>
+     </main>
   </div>
   );
 }
