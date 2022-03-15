@@ -46,25 +46,5 @@
     .collection-title {
       color: darkblue;
     }
-
-    button {
-      margin: 15px 20px;
-      border: 10px solid #fff;
-      box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
-      background-color: #fff;
-      cursor: pointer;
-      width: 170px;
-      text-align: center;
-    }
-
-    button:hover {
-      background-color: grey;
-      border: 10px solid grey;
-    }
-
-    button:active {
-      border: 10px solid #fff;
-      background-color: #fff;
-    }
   }
 }

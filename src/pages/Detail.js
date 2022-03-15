@@ -7,9 +7,7 @@ const Detail = () => {
 
   return(
     <div className="container">
-      MyTheresa
       <main>
-        <h1>This is the detail page</h1>
         <MovieDetailComponent movieId={movieId} />
         <MovieBannerComponent movieId={movieId} />
       </main>
