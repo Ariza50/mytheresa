@@ -3,7 +3,6 @@ import './MovieDetail.styles.scss'
 
 const MovieDetailComponent = ({movieId}) => {
   const { data: movie, isLoading } = useGetMovieDetailQuery(movieId);
-  console.log("-> movie", movie);
 
   if (isLoading) {
     return null;

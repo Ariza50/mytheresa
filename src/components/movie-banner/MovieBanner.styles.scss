@@ -1,0 +1,37 @@
+
+.banner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  .banner-content {
+    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+    width: 950px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .circle {
+      border-radius: 50%;
+      height: 150px;
+    }
+
+    .banner-properties {
+      text-align: right;
+    }
+
+    .banner-values {
+      text-align: left;
+    }
+
+    h3 {
+      margin: 5px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
