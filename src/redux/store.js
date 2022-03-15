@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {persistReducer} from 'redux-persist';
+import {persistReducer, persistStore} from 'redux-persist';
 import {rootPersistConfig, rootReducer} from './rootReducer';
 import {
   useDispatch as useReduxDispatch,
@@ -16,8 +16,10 @@ const store = configureStore({
   )
 });
 
+const persistor = persistStore(store);
+
 const useSelector = useReduxSelector;
 
 const useDispatch = () => useReduxDispatch();
 
-export { store, useSelector, useDispatch }
+export { store, useSelector, useDispatch, persistor }
