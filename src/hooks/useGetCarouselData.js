@@ -1,6 +1,6 @@
 import {useGetMovieByGenreQuery} from '../redux/apiTheMoviedb';
 
-export const useGetCarousel = ({ genre, movieId }) => {
+const useGetCarousel = ({ genre, movieId }) => {
   const { data } = useGetMovieByGenreQuery(genre, 1);
 
   let movieIndex;

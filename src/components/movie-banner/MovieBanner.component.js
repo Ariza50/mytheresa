@@ -2,10 +2,11 @@ import './MovieBanner.styles.scss';
 import {useNavigate} from 'react-router-dom';
 import {useGetMovieDetailQuery} from '../../redux/apiTheMoviedb';
 import {removeFromWishlist} from '../../redux/slices/wishlist.slice';
-import {useDispatch} from '../../redux/store';
+import {useDispatch, useSelector} from '../../redux/store';
 
 const MovieBannerComponent = ({movieId, removeAction = false}) => {
   const { data: movie, isLoading } = useGetMovieDetailQuery(movieId);
+  const { configuration } = useSelector((state) => state.configuration);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -13,7 +14,7 @@ const MovieBannerComponent = ({movieId, removeAction = false}) => {
     dispatch(removeFromWishlist(movie));
   }
 
-  const goToDetails = (movieId) => {
+  const goToDetails = () => {
     navigate(`/detail/${movie.id}`);
   }
 
@@ -21,13 +22,13 @@ const MovieBannerComponent = ({movieId, removeAction = false}) => {
     return null;
   }
 
-  const movieImage = `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+  const baseImageURL = configuration.imageURL + configuration.posterSize;
 
   return (
     <div className="banner">
 
       <div className="banner-content">
-        <img onClick={() => goToDetails(movie.id)} src={movieImage} alt="" />
+        <img onClick={goToDetails} src={baseImageURL + movie.poster_path} alt="" />
         <div className="banner-properties">
           <h3>Original title:</h3>
           <h3>Homepage:</h3>

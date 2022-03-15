@@ -1,9 +1,12 @@
-import {Link} from 'react-router-dom';
 import CarouselComponent from '../components/carousel/carousel.component';
-import {useGetConfigurationQuery} from '../redux/apiTheMoviedb';
+import useUpdateDefaultConfiguration from '../hooks/useGetConfigurationData';
 
 const Home = () => {
-  const { data } = useGetConfigurationQuery();
+  const { isLoading } = useUpdateDefaultConfiguration();
+
+  if (isLoading) {
+    return null;
+  }
   return (
     <div className="container">
       <main>
