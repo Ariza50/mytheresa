@@ -13,9 +13,12 @@
     align-items: center;
     justify-content: space-evenly;
 
-    .circle {
+    img {
       border-radius: 50%;
       height: 150px;
+      width: 150px;
+      object-fit: cover;
+      cursor: pointer;
     }
 
     .banner-properties {
@@ -24,6 +27,11 @@
 
     .banner-values {
       text-align: left;
+      width: 400px;
+    }
+
+    .banner-remove {
+      cursor: pointer;
     }
 
     h3 {

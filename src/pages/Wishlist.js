@@ -7,7 +7,7 @@ const Wishlist = () => {
   return (
     <div>
       <div>Wishlist</div>
-      {wishlistItems.map(item => (<MovieBannerComponent key={item.id} movieId={item.id} />))}
+      {wishlistItems.map(item => (<MovieBannerComponent key={item.id} movieId={item.id} removeAction={true} />))}
     </div>
   );
 }
