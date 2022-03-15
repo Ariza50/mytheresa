@@ -9,7 +9,6 @@ const carouselComponent = ({ genreId }) => {
   const { priorMovie, currentMovie, nextMovie, isLoading } = useGetCarousel({ genre: genreId, movieId: selectedMovieId});
 
   const goToMovieDetails = (movie) => {
-    console.log("-> movie ", movie);
     navigate(`detail/${movie.id}`);
   };
 
