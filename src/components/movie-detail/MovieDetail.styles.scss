@@ -23,6 +23,13 @@
     justify-content: space-between;
     text-align: center;
 
+    img {
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+    }
+
     h1 {
       text-align: center;
       margin: 0;
@@ -36,24 +43,8 @@
       margin-right: 15px;
     }
 
-    button {
-      margin: 15px 20px;
-      border: 10px solid #fff;
-      box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
-      background-color: #fff;
-      cursor: pointer;
-      width: 170px;
-      text-align: center;
-    }
-
-    button:hover {
-      background-color: grey;
-      border: 10px solid grey;
-    }
-
-    button:active {
-      border: 10px solid #fff;
-      background-color: #fff;
+    .collection-title {
+      color: darkblue;
     }
   }
 }

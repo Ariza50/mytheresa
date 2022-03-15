@@ -1,71 +1,83 @@
-.carousel {
-  display: flex;
-  align-items: center;
-  position: relative;
+.carousel-container {
+  margin-top: 10px;
+  margin-bottom: 100px;
 
-  button {
-    border: none;
-    opacity: 0.6;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
+  .carousel-title {
+    text-align: center;
+    font-size: 50px;
+    color: darkblue;
   }
 
-  .left {
-    top: 40%;
-    left: 10%;
-  }
-
-  .right {
-    top: 40%;
-    right: 10%;
-  }
-
-  #wrapper-start, #wrapper-end {
-    margin-top: 20px;
-    overflow: hidden;
-    width: 279px;
-    height: 468px;
-    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
-    transform: rotate(-2deg);
-    border: 10px solid #fff;
-    opacity: 0.2;
-    z-index: 0;
-    cursor: pointer;
-  }
-
-  #wrapper-start {
-    margin-left: auto;
-    margin-right: 25px;
-  }
-
-  #wrapper-end {
-    margin-left: 25px;
-    margin-right: auto;
-  }
-
-  #wrapper-current {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 20px;
+  .carousel {
+    display: flex;
+    align-items: center;
     position: relative;
-    overflow: hidden;
-    width: 379px;
-    height: 568px;
-    box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
-    transform: rotate(-2deg);
-    border: 10px solid #fff;
-    cursor: pointer;
+    margin-top: 40px;
 
-    .title {
+    button {
+      border: none;
+      opacity: 0.6;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
       position: absolute;
+      z-index: 1;
+    }
+
+    .left {
+      top: 40%;
+      left: 10%;
+    }
+
+    .right {
+      top: 40%;
+      right: 10%;
+    }
+
+    #wrapper-start, #wrapper-end {
+      margin-top: 20px;
+      overflow: hidden;
+      width: 279px;
+      height: 468px;
+      box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+      transform: rotate(-2deg);
+      border: 10px solid #fff;
+      opacity: 0.2;
+      z-index: 0;
+      cursor: pointer;
+    }
+
+    #wrapper-start {
+      margin-left: auto;
+      margin-right: 25px;
+    }
+
+    #wrapper-end {
+      margin-left: 25px;
+      margin-right: auto;
+    }
+
+    #wrapper-current {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
       width: 379px;
-      height: 80px;
-      text-align: center;
-      background-color: #dbdbdb;
-      opacity: 0.4;
+      height: 568px;
+      box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
+      transform: rotate(-2deg);
+      border: 10px solid #fff;
+      cursor: pointer;
+
+      .title {
+        position: absolute;
+        width: 379px;
+        height: 80px;
+        text-align: center;
+        background-color: #dbdbdb;
+        opacity: 0.4;
+      }
     }
   }
 }
