@@ -8,6 +8,7 @@ const MovieDetailComponent = ({movieId}) => {
   const dispatch = useDispatch();
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { data: movie, isLoading } = useGetMovieDetailQuery(movieId);
+  const { configuration } = useSelector((state) => state.configuration);
   let [isAWishItem, setIsAWishItem] = useState(false);
 
   useEffect(() => {
@@ -32,17 +33,12 @@ const MovieDetailComponent = ({movieId}) => {
       : addItemToWhisList()
   }
 
-  const movieImage = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-
-  let collectionImage;
-  if (movie.belongs_to_collection) {
-    collectionImage = `https://image.tmdb.org/t/p/w300${movie.belongs_to_collection.poster_path}`;
-  }
+  const baseImageURL = configuration.imageURL + configuration.posterSize;
 
   return(
     <div className="movie-detail">
       <div className="image-description-container">
-        <img src={movieImage} alt={movie.title} />
+        <img src={baseImageURL + movie.poster_path} alt={movie.title} />
       </div>
       <div className="movie-description">
         <h1>{movie.title}</h1>
@@ -51,7 +47,7 @@ const MovieDetailComponent = ({movieId}) => {
           movie.belongs_to_collection
             ? <div>
                 <h3 className="collection-title">{movie.belongs_to_collection.name}</h3>
-                <img src={collectionImage} alt="" />
+                <img src={baseImageURL + movie.belongs_to_collection.poster_path} alt="" />
               </div>
             : null
         }
