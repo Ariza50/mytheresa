@@ -34,6 +34,11 @@ const MovieDetailComponent = ({movieId}) => {
 
   const movieImage = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
+  let collectionImage;
+  if (movie.belongs_to_collection) {
+    collectionImage = `https://image.tmdb.org/t/p/w300${movie.belongs_to_collection.poster_path}`;
+  }
+
   return(
     <div className="movie-detail">
       <div className="image-description-container">
@@ -42,6 +47,14 @@ const MovieDetailComponent = ({movieId}) => {
       <div className="movie-description">
         <h1>{movie.title}</h1>
         <h3>{movie.overview}</h3>
+        {
+          movie.belongs_to_collection
+            ? <div>
+                <h3 className="collection-title">{movie.belongs_to_collection.name}</h3>
+                <img src={collectionImage} alt="" />
+              </div>
+            : null
+        }
         <button onClick={manageItemToWishlist}>{ isAWishItem ? 'Remove from Wishlist' : 'Add to wishlist' }</button>
       </div>
     </div>

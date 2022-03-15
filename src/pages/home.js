@@ -11,7 +11,9 @@ const Home = () => {
       <h1>This is the home page</h1>
       <Link to="detail">Click to view our detail page</Link>
       <Link to="wishlist">Click to view our wishlist page</Link>
-      <CarouselComponent genreId={28} />
+      <CarouselComponent genreId={28} carouselTitle="Action" />
+      <CarouselComponent genreId={14} carouselTitle="Fantasy" />
+      <CarouselComponent genreId={37} carouselTitle="Western" />
      </main>
   </div>
   );
