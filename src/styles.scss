@@ -1,7 +1,9 @@
 body {
+  margin: 0;
   background-color: #dbdbdb;
+  font-family: 'Titillium Web', sans-serif;
 
-  button {
+  .wishlist-button {
     margin: 15px 20px;
     border: 10px solid #fff;
     box-shadow: 0 0 30px 5px rgba(0,0,0,.3);
@@ -12,13 +14,25 @@ body {
     text-align: center;
   }
 
-  button:hover {
+  .wishlist-button:hover {
     background-color: grey;
     border: 10px solid grey;
   }
 
-  button:active {
+  .wishlist-button:active {
     border: 10px solid #fff;
     background-color: #fff;
+  }
+
+  .go-back-button {
+    border: none;
+    font-size: 80px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    z-index: 1;
+    background-color: lightgrey;
+    cursor: pointer;
+    margin: 20px 10px 10px 50px;
   }
 }
