@@ -23,12 +23,14 @@ const carouselComponent = ({ genreId, carouselTitle }) => {
 
   return (
     <div className="carousel-container">
-      <h1 className="carousel-title">{carouselTitle}</h1>
+      <div className="carousel-title-container">
+        <h1 className="carousel-title">{carouselTitle}</h1>
+      </div>
       <div className="carousel">
         <div id="wrapper-start" onClick={() => goToMovieDetails(priorMovie)}>
           <img src={baseImageURL + priorMovie.poster_path} alt={priorMovie.title} />
         </div>
-        <button className="left" onClick={() => { setSelectedMovieId(priorMovie.id) }}>left</button>
+        <button className="left" onClick={() => { setSelectedMovieId(priorMovie.id) }}>⬅️</button>
 
         <div id="wrapper-current" onClick={() => goToMovieDetails(currentMovie)}>
           <div className="title">
@@ -36,7 +38,7 @@ const carouselComponent = ({ genreId, carouselTitle }) => {
           </div>
           <img src={baseImageURL + currentMovie.poster_path} alt={currentMovie.title} />
         </div>
-        <button className="right" onClick={() => { setSelectedMovieId(nextMovie.id) }}>right</button>
+        <button className="right" onClick={() => { setSelectedMovieId(nextMovie.id) }}>➡️</button>
         <div id="wrapper-end" onClick={() => goToMovieDetails(nextMovie)}>
           <img src={baseImageURL + nextMovie.poster_path} alt={nextMovie.title} />
         </div>

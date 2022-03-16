@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {useGetMovieDetailQuery} from '../../redux/apiTheMoviedb';
 import './MovieDetail.styles.scss'
 import {addToWishlist, removeFromWishlist} from '../../redux/slices/wishlist.slice';
 import {useDispatch, useSelector} from '../../redux/store';
 
 const MovieDetailComponent = ({movieId}) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { data: movie, isLoading } = useGetMovieDetailQuery(movieId);
@@ -36,24 +38,27 @@ const MovieDetailComponent = ({movieId}) => {
   const baseImageURL = configuration.imageURL + configuration.posterSize;
 
   return(
-    <div className="movie-detail">
-      <div className="image-description-container">
-        <img src={baseImageURL + movie.poster_path} alt={movie.title} />
+    <>
+      <button className="go-back-button" onClick={() => navigate('/')}>⬅️</button>
+      <div className="movie-detail">
+        <div className="image-description-container">
+          <img src={baseImageURL + movie.poster_path} alt={movie.title} />
+        </div>
+        <div className="movie-description">
+          <h1>{movie.title}</h1>
+          <h3>{movie.overview}</h3>
+          {
+            movie.belongs_to_collection
+              ? <div>
+                  <h3 className="collection-title">{movie.belongs_to_collection.name}</h3>
+                  <img src={baseImageURL + movie.belongs_to_collection.poster_path} alt="" />
+                </div>
+              : null
+          }
+          <button className="wishlist-button" onClick={manageItemToWishlist}>{ isAWishItem ? 'Remove from Wishlist' : 'Add to wishlist' }</button>
+        </div>
       </div>
-      <div className="movie-description">
-        <h1>{movie.title}</h1>
-        <h3>{movie.overview}</h3>
-        {
-          movie.belongs_to_collection
-            ? <div>
-                <h3 className="collection-title">{movie.belongs_to_collection.name}</h3>
-                <img src={baseImageURL + movie.belongs_to_collection.poster_path} alt="" />
-              </div>
-            : null
-        }
-        <button onClick={manageItemToWishlist}>{ isAWishItem ? 'Remove from Wishlist' : 'Add to wishlist' }</button>
-      </div>
-    </div>
+    </>
   );
 }
 
